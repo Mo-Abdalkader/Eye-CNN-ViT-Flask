@@ -21,7 +21,7 @@ The application performs a dual-output classification, assessing both the severi
 
 The repository is organized as follows:
 
-
+```
 Eye-CNN-ViT-Flask/
 ├── app.py              # Main Flask application
 ├── models/             # Pre-trained models and architecture
@@ -30,9 +30,8 @@ Eye-CNN-ViT-Flask/
 │   └── vit_model.pth     # <-- Trained ViT model weights
 ├── static/             # CSS, JavaScript, images, and sounds
 ├── templates/          # HTML templates
-│   └── index.html
-└── utils/              # Image preprocessing utilities
-
+    └── index.html
+```
 
 ***
 
