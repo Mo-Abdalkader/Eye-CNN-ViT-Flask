@@ -41,7 +41,7 @@ Follow these steps to get the application running on your local machine.
 
 1.  **Clone the Repository**
     ```bash
-    git clone [https://github.com/Mo-Abdalkader/Eye-CNN-ViT-Flask.git](https://github.com/Mo-Abdalkader/Eye-CNN-ViT-Flask.git)
+    git clone (https://github.com/Mo-Abdalkader/Eye-CNN-ViT-Flask.git)
     cd Eye-CNN-ViT-Flask
     ```
 
