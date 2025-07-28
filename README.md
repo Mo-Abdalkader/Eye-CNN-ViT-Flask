@@ -4,8 +4,6 @@ This is a Flask web application that provides an interactive interface for class
 
 The application performs a dual-output classification, assessing both the severity of retinopathy and the risk of macular edema.
 
-![App Screenshot](https://i.imgur.com/L2f7JjA.png)
-
 ***
 
 ## Features
@@ -44,7 +42,7 @@ Follow these steps to get the application running on your local machine.
 
 1.  **Clone the Repository**
     ```bash
-    git clone [https://github.com/](https://github.com/)<your-username>/Eye-CNN-ViT-Flask.git
+    git clone [https://github.com/Mo-Abdalkader/Eye-CNN-ViT-Flask.git](https://github.com/Mo-Abdalkader/Eye-CNN-ViT-Flask.git)
     cd Eye-CNN-ViT-Flask
     ```
 
