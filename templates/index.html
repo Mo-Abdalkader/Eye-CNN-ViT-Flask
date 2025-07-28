@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNN vs. Vision Transformer - Retinal Fundus Model Showdown</title>
+    <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="arena-bg"></div>
+    <div class="container">
+        <header>
+            <h1>CNN vs. Vision Transformer</h1>
+            <p class="subtitle">See how two state-of-the-art AI models diagnose your image—side by side.</p>
+        </header>
+        <main>
+            <div id="upload-section" class="centered">
+                <form id="upload-form" enctype="multipart/form-data">
+                    <label for="image-upload" class="upload-label" aria-label="Upload retinal fundus image">
+                        <span>Drag & Drop or <span class="choose-file">Choose File</span></span>
+                        <input type="file" id="image-upload" name="image" accept="image/*" required>
+                    </label>
+                    <span id="file-name"></span>
+                    <button type="submit" class="analyze-btn">Analyze Image</button>
+                </form>
+            </div>
+            <div id="vs-arena" class="vs-arena" style="display:none;" aria-label="Model Showdown Arena">
+                <div class="fighter-card cnn-card" id="cnn-card">
+                    <div class="fighter-icon"><img src="/static/cnn_icon.png" alt="CNN Icon"></div>
+                    <h2 class="column-header cnn-header">CNN (ResNet50)</h2>
+                    <div class="health-bar" id="cnn-health"></div>
+                    <div class="diagnosis-block">
+                        <h3>Diabetic Retinopathy (DR)</h3>
+                        <div class="label-confidence">
+                            <span class="diagnosis-label" id="cnn-dr-label"></span>
+                            <canvas id="cnn-dr-gauge" width="120" height="120"></canvas>
+                        </div>
+                        <canvas id="cnn-dr-bar" class="bar-chart"></canvas>
+                    </div>
+                    <div class="diagnosis-block">
+                        <h3>Diabetic Macular Edema (DME)</h3>
+                        <div class="label-confidence">
+                            <span class="diagnosis-label" id="cnn-dme-label"></span>
+                            <canvas id="cnn-dme-gauge" width="120" height="120"></canvas>
+                        </div>
+                        <canvas id="cnn-dme-bar" class="bar-chart"></canvas>
+                    </div>
+                    <div class="model-explain">
+                        <img src="/static/cnn_hierarchy.png" alt="CNN Hierarchy Illustration" class="explain-img">
+                        <p class="explain-text">The CNN builds its understanding by progressively identifying local features—from simple edges and textures in early layers to complex shapes and objects in deeper layers.</p>
+                    </div>
+                    <img src="/static/KO.png" alt="KO!" class="ko-badge" id="cnn-ko" aria-label="CNN Wins! KO!">
+                </div>
+                <div class="vs-center">
+                    <img src="/static/Vs.png" alt="VS" class="vs-badge" id="vs-badge" aria-label="Versus">
+                    <div class="image-wrapper">
+                        <img id="uploaded-image" src="" alt="Uploaded Fundus" class="uploaded-img">
+                        <div class="image-caption" id="image-caption"></div>
+                    </div>
+                </div>
+                <div class="fighter-card vit-card" id="vit-card">
+                    <div class="fighter-icon"><img src="/static/vit_icon.png" alt="ViT Icon"></div>
+                    <h2 class="column-header vit-header">Vision Transformer (ViT)</h2>
+                    <div class="health-bar" id="vit-health"></div>
+                    <div class="diagnosis-block">
+                        <h3>Diabetic Retinopathy (DR)</h3>
+                        <div class="label-confidence">
+                            <span class="diagnosis-label" id="vit-dr-label"></span>
+                            <canvas id="vit-dr-gauge" width="120" height="120"></canvas>
+                        </div>
+                        <canvas id="vit-dr-bar" class="bar-chart"></canvas>
+                    </div>
+                    <div class="diagnosis-block">
+                        <h3>Diabetic Macular Edema (DME)</h3>
+                        <div class="label-confidence">
+                            <span class="diagnosis-label" id="vit-dme-label"></span>
+                            <canvas id="vit-dme-gauge" width="120" height="120"></canvas>
+                        </div>
+                        <canvas id="vit-dme-bar" class="bar-chart"></canvas>
+                    </div>
+                    <div class="model-explain">
+                        <img src="/static/vit_attention.png" alt="ViT Attention Illustration" class="explain-img">
+                        <p class="explain-text">The Vision Transformer analyzes the image by identifying relationships between distant regions, allowing it to capture global structural patterns and context.</p>
+                    </div>
+                    <img src="/static/KO.png" alt="KO!" class="ko-badge" id="vit-ko" aria-label="ViT Wins! KO!">
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="/static/app.js"></script>
+</body>
+</html>
